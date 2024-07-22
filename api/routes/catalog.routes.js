@@ -1,8 +1,12 @@
 import { Router } from "express";
-import { getProducts, getProductsByFilters, getProductsByLike } from "../controllers/catalog.controller.js";
+import { getProducts, getProductsByFiltersType, getProductsByLike, getTypes } from "../controllers/catalog.controller.js";
 
 export const catalogRouter = new Router();
 
+//Products
 catalogRouter.get('/catalog', getProducts);
-catalogRouter.get('/catalog/filter', getProductsByFilters);
-catalogRouter.get('/catalog/like', getProductsByLike);
+catalogRouter.post('/catalog/filter', getProductsByFiltersType);
+catalogRouter.post('/catalog/like', getProductsByLike);
+
+//Types
+catalogRouter.get('/types', getTypes);
