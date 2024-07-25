@@ -18,26 +18,26 @@ export async function filterProductsByLike(param){
 }
 
 export async function insertProducts(params){
-    query(`INSERT INTO products (name, description, price, upload, id_type) values ('${params[0]}', '${params[1]}', ${params[2]}, '${params[3]}', '${params[4]}')`);
+    await query(`INSERT INTO products (name, description, price, upload, id_type) values ('${params[0]}', '${params[1]}', ${params[2]}, '${params[3]}', '${params[4]}')`);
     return (await query("SELECT * FROM products")).rows;
 }
 
 export async function insertType(name){
-    query(`INSERT INTO types(name_type) values ('${name}')`);
+    await query(`INSERT INTO types(name_type) values ('${name}')`);
     return (await query('SELECT * FROM types')).rows;
 }
 
-export async function updateProducts(name, description, price, url, id){
-    query(`UPDATE products SET name = '${name}, description = '${description}', price = '${price}', url = '${url}' where id_prod = '${id}'`)
+export async function updateProducts(props){
+    await query(`UPDATE products SET name = $1, description = $2, price = $3 where id_prod = $4`, props)
     return (await query('SELECT * FROM products')).rows;
 }
 
 export async function deleteProducts(id){
-    query(`DELETE FROM products where id_prod = '${id}'`);
+    await query(`DELETE FROM products where id_prod = ${id}`);
     return (await query("SELECT * FROM products")).rows;
 }
 
 export async function deleteTypes(id){
-    query(`DELETE FROM types where id_types = '${id}'`);
+    await query(`DELETE FROM types where id_type = ${id}`);
     return (await query("SELECT * FROM types")).rows;
 }

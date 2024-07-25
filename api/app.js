@@ -3,6 +3,7 @@ import path from 'path';
 import {indexRouter} from './routes/index.routes.js';
 import {catalogRouter} from './routes/catalog.routes.js';
 import { config } from "dotenv";
+import { adminRoutes } from './routes/admin.routes.js';
 config();
 const app = Express();
 const {pathname: __dirname} = new URL('./', import.meta.url);
@@ -19,6 +20,7 @@ app.use(Express.urlencoded({ extended: false }));
 //Routes
 app.use(indexRouter)
 app.use(catalogRouter)
+app.use(adminRoutes);
 // app.use((req, res)=>{
 //     res.render('error404');
 // })
