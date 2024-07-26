@@ -1,11 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronic Store</title>
+    <link
+      rel="stylesheet"
+      href="./styles/mobile.css"
+      media="(max-width: 425px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles/tablet.css"
+      media="(min-width: 426px) and (max-width: 1023px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles/desktop.css"
+      media="(min-width: 1024px)"
+    />
+  </head>
+  <body>
+    <header class="navbar" id="main">
+      <div class="logo">
+        <box-icon name="meteor" color="#66726c"></box-icon>
+        <h3>Electronic Store</h3>
+      </div>
+      <div id="menu-icon-container">
+        <button>
+          <box-icon
+            name="menu"
+            color="#66726c"
+            id="menu-icon"
+            size="sm"
+          ></box-icon>
+        </button>
+      </div>
+    </header>
+
+    <!--Menu que aparezca-->
+    <div id="window-menu" style="display: none">
+      <h2 id="wm-title"><i>ELECTRONIC STORE</i></h2>
+
+      <ul id="wm-options">
+        <li class="wm-options-item"><a href="#main">INICIO</a></li>
+        <li class="wm-options-item">
+          <a href="#popular-products">PRODUCTOS POPULARES</a>
+        </li>
+        <li class="wm-options-item"><a href="#">CATALOGO</a></li>
+        <li class="wm-options-item"><a href="#contact-us">CONTACTANOS</a></li>
+      </ul>
+    </div>
+
+    <section id="hero-section">
+      <h1><i>Manteniendo la tecnología al alcance de tu mano</i></h1>
+    </section>
+
+    <section id="call-to-action">
+      <div id="cta-img-container">
+        <img
+          src="./media/human.png"
+          alt="human-repairing stuff"
+          id="human-repairing-img"
+        />
+      </div>
+      <div id="cta-text-container">
+        <h2 id="cta-title"><i>Reparamos tus equipos electrónicos</i></h2>
+        <button type="button" id="cta-btn">
+          <a href="tel:+">Llámanos!</a>
+        </button>
+      </div>
+    </section>
+
+    <section id="categories">
+      <h2 id="categories-title"><i>¿Qué productos ofertamos?</i></h2>
+
+      <!--Aqui agregar conexion con servidor para mostrar categorias-->
+      <div class="product-category">
+        <div class="category-img" id="">
+          <img src="./media/laptop.png" alt="laptop" />
+        </div>
+        <div class="category-title">
+          <h3><i>LAPTOPS</i></h3>
+        </div>
+      </div>
+
+      <div class="product-category">
+        <div class="category-img" id="">
+          <img src="./media/consola.png" alt="consola" />
+        </div>
+        <div class="category-title">
+          <h3><i>CONSOLAS</i></h3>
+        </div>
+      </div>
+
+      <div class="product-category">
+        <div class="category-img" id="">
+          <img src="./media/tablet.png" alt="tablet" />
+        </div>
+        <div class="category-title">
+          <h3><i>TABLETS</i></h3>
+        </div>
+      </div>
+
+      <div class="product-category">
+        <div class="category-img" id="">
+          <img src="./media/TV LCD.png" alt="tv" />
+        </div>
+        <div class="category-title">
+          <h3><i>TELEVISORES</i></h3>
+        </div>
+      </div>
+    </section>
+
+    <!--Menu que aparezca-->
+    <div class="product-info">
+      <div class="p-info-btn">
+        <button>X</button>
+      </div>
+      <div class="top-div">
+        <img src="./media/consola.png" alt="consola" />
+      </div>
+
+      <div class="bottom-div">
+        <h2 id="pi-title">Mando de Consola XBox One</h2>
+
+        <h2 id="pi-subtitle">Precio: $50.00</h2>
+
+        <div class="information">
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua.
+          </p>
+        </div>
+
+        <div class="pi-btn">
+          <button id="pi-reserv-btn">Reservar</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="popular-products">
+      <h2><i>Productos Populares</i></h2>
+      <!--Aplicar Logica aqui tambien-->
+      <div class="popular-product-container" id="">
+        <div class="bg"></div>
+        <div class="info-btn">
+          <button><i>i</i></button>
+        </div>
+
+        <div class="popular-product-img-container">
+          <img src="./media/consola.png" alt="consola" />
+        </div>
+
+        <div class="popular-product-text-container">
+          <h2 id="popular-product-title"><i>Consola XBOX</i></h2>
+          <h2 id="popular-product-price"><i>$50.00</i></h2>
+        </div>
+      </div>
+
+      <div class="popular-product-container" id="">
+        <div class="info-btn">
+          <button><i>i</i></button>
+        </div>
+
+        <div class="popular-product-img-container">
+          <img src="./media/laptop.png" alt="consola" />
+        </div>
+
+        <div class="popular-product-text-container">
+          <h2 id="popular-product-title"><i>Consola XBOX</i></h2>
+          <h2 id="popular-product-price"><i>$50.00</i></h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-us">
+      <div id="where-to-find">
+        <h2 id="wtf-title"><i>¿Dónde encontrarnos?</i></h2>
+        <h3 id="wtf-subtitle">
+          <i
+            >Calle Neptuno e/ Consulado e Industria. <br />
+            Centro Habana</i
+          >
+        </h3>
+      </div>
+
+      <div id="contact-phones">
+        <h2 id="cp-title"><i>Teléfonos de contacto</i></h2>
+        <h3 id="cp-subtitle">
+          <i
+            >+53 55555555<br />
+            +53 78787878</i
+          >
+        </h3>
+      </div>
+
+      <div id="social-networks">
+        <h2 id="sn-title"><i>Redes Sociales</i></h2>
+        <ul id="sn-subtitle">
+          <li>
+            <i
+              >Facebook
+              <box-icon type="logo" name="facebook" color="#66726c"></box-icon
+            ></i>
+          </li>
+          <li>
+            <i
+              >Instagram
+              <box-icon type="logo" name="instagram" color="#66726c"></box-icon
+            ></i>
+          </li>
+          <li>
+            <i
+              >Telegram
+              <box-icon type="logo" name="telegram" color="#66726c"></box-icon
+            ></i>
+          </li>
+          <li>
+            <i
+              >Twitter
+              <box-icon type="logo" name="twitter" color="#66726c"></box-icon
+            ></i>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p><i>JP Devs© 2024 Todos los derechos reservados.</i></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="./app.js"></script>
+  </body>
 </html>
