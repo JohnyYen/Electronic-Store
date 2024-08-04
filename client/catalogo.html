@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogo Electronic Store</title>
+    <link
+      rel="stylesheet"
+      href="./styles/mobile.css"
+      media="(max-width: 425px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles/tablet.css"
+      media="(min-width: 426px) and (max-width: 1023px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles/desktop.css"
+      media="(min-width: 1024px)"
+    />
+    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <header class="navbar" id="main">
+        <div class="logo">
+          <box-icon name="meteor" color="#66726c"></box-icon>
+          <h3>Electronic Store</h3>
+        </div>
+        <div id="menu-icon-container">
+          <button>
+            <box-icon
+              name="menu"
+              color="#66726c"
+              id="menu-icon"
+              size="sm"
+            ></box-icon>
+          </button>
+        </div>
+      </header>
+
+          <!--Menu que aparezca-->
+          <!--Agregar conexion con el servidor para las categorias-->
+    <div id="window-menu">
+        <h2 id="wm-title"><i>ELECTRONIC STORE</i></h2>
+  
+        <ul id="wm-options">
+          <li class="wm-options-item"><a href="#main">INICIO</a></li>
+          <li class="wm-options-item" id="category-1">
+            <a href="#">CELULARES</a>
+          </li>
+          <li class="wm-options-item" id="category-2"><a href="#">LAPTOPS</a></li>
+          <li class="wm-options-item" id="category-3"><a href="#">TELEVISORES</a></li>
+        </ul>
+      </div>
+
+      <div id="changing-photo">
+      </div>
+
+      <section id="all-products-slider">
+        <h2><i>Productos populares</i></h2>
+        <div class="slider">
+            <div class="slider-container">
+                <div class="slide">
+                    <img src="./media/Asus MotherBoard.png" alt="Producto 1">
+                    <p class="ap-name"><b>Producto 1</b></p>
+                </div>
+                <div class="slide">
+                    <img src="./media/Asus Zenbook.png" alt="Producto 2">
+                    <p class="ap-name"><b>Producto 2</b></p>
+                </div>
+                <div class="slide">
+                    <img src="./media/Camara video.png" alt="Producto 3">
+                    <p class="ap-name"><b>Producto 3</b></p>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+      </section>
+      
+      <section id="contact-us">
+        <div id="where-to-find">
+          <h2 id="wtf-title"><i>¿Dónde encontrarnos?</i></h2>
+          <h3 id="wtf-subtitle">
+            <i
+              >Calle Neptuno e/ Consulado e Industria. <br />
+              Centro Habana</i
+            >
+          </h3>
+        </div>
+  
+        <div id="contact-phones">
+          <h2 id="cp-title"><i>Teléfonos de contacto</i></h2>
+          <h3 id="cp-subtitle">
+            <i
+              >+53 55555555<br />
+              +53 78787878</i
+            >
+          </h3>
+        </div>
+  
+        <div id="social-networks">
+          <h2 id="sn-title"><i>Redes Sociales</i></h2>
+          <ul id="sn-subtitle">
+            <li>
+              <i
+                >Facebook
+                <box-icon type="logo" name="facebook" color="#66726c"></box-icon
+              ></i>
+            </li>
+            <li>
+              <i
+                >Instagram
+                <box-icon type="logo" name="instagram" color="#66726c"></box-icon
+              ></i>
+            </li>
+            <li>
+              <i
+                >Telegram
+                <box-icon type="logo" name="telegram" color="#66726c"></box-icon
+              ></i>
+            </li>
+            <li>
+              <i
+                >Twitter
+                <box-icon type="logo" name="twitter" color="#66726c"></box-icon
+              ></i>
+            </li>
+          </ul>
+        </div>
+      </section>
+  
+      <footer>
+        <p><i>JP Devs© 2024 Todos los derechos reservados.</i></p>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

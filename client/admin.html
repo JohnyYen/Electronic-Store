@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page Electronic Store</title>
+    <link
+      rel="stylesheet"
+      href="./styles/mobile.css"
+      media="(max-width: 425px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles/tablet.css"
+      media="(min-width: 426px) and (max-width: 1023px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles/desktop.css"
+      media="(min-width: 1024px)"
+    />
+    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <header class="navbar" id="main">
+        <div class="logo">
+          <box-icon name="meteor" color="#66726c"></box-icon>
+          <h3>Electronic Store</h3>
+        </div>
+        <div id="menu-icon-container">
+          <button>
+            <box-icon
+              name="menu"
+              color="#66726c"
+              id="menu-icon"
+              size="sm"
+            ></box-icon>
+          </button>
+        </div>
+      </header>
+
+          <!--Menu que aparezca-->
+          <!--Agregar conexion con el servidor para las categorias-->
+    <div id="window-menu">
+        <h2 id="wm-title"><i>ELECTRONIC STORE</i></h2>
+  
+        <ul id="wm-options">
+          <li class="wm-options-item" id="add-product">
+            <a href="#">AGREGAR PRODUCTO</a>
+          </li>
+          <li class="wm-options-item" id="add-category"><a href="#">AGREGAR CATEGORIA</a></li>
+          <li class="wm-options-item" id="see-categories"><a href="#">VER CATEGORIAS</a></li>
+        </ul>
+      </div>
+
+      <section id="all-products-list">
+        <div id="title-products">
+            <h1><i>Todos los productos</i></h1>
+            <button class="add-product"><b>+</b></button>
+        </div>
+        <div class="product-list">
+          <ul>
+            <li id="product-" class="product-item">
+              <div class="popular-product-container" id="">
+                <div class="bg"></div>
+                <div class="info-btn">
+                  <button id="info-button"><i>i</i></button>
+                  <button id="edit-button"><box-icon name='pencil' type='solid' color='#66726c' ></box-icon></button>
+                </div>
+        
+                <div class="popular-product-img-container">
+                  <img src="./media/consola.png" alt="consola" />
+                </div>
+        
+                <div class="popular-product-text-container">
+                  <h2 id="popular-product-title"><i>Consola XBOX</i></h2>
+                  <h2 id="popular-product-price"><i>$50.00</i></h2>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!--<div id="add-product-menu">
+        <div id="add-photo">
+            <div id="exit-btn">
+                <button><b>X</b></button>
+            </div>
+            <input type="file" name="input-image" required accept="image/png, image/jpg">
+        </div>
+        <div id="add-texts">
+            <label for="Titulo">Titulo</label>
+            <input type="text" name="Titulo" id="">
+            <label for="Precio">Precio</label>
+            <input type="text" name="Precio" id="">
+            <label for="Categorias">Categorias</label>
+            <select name="Categorias" id="">
+                <option value="celulares">Celulares</option>
+            </select>
+        </div>
+      </div>-->
+ 
+  
+      <footer>
+        <p><i>JP Devs© 2024 Todos los derechos reservados.</i></p>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

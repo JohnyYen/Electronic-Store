@@ -19,8 +19,12 @@
       href="./styles/desktop.css"
       media="(min-width: 1024px)"
     />
+    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
   </head>
   <body>
+    <div class="black-bg"></div>
+
     <header class="navbar" id="main">
       <div class="logo">
         <box-icon name="meteor" color="#66726c"></box-icon>
@@ -39,7 +43,7 @@
     </header>
 
     <!--Menu que aparezca-->
-    <div id="window-menu" style="display: none">
+    <div id="window-menu">
       <h2 id="wm-title"><i>ELECTRONIC STORE</i></h2>
 
       <ul id="wm-options">
@@ -47,7 +51,7 @@
         <li class="wm-options-item">
           <a href="#popular-products">PRODUCTOS POPULARES</a>
         </li>
-        <li class="wm-options-item"><a href="#">CATALOGO</a></li>
+        <li class="wm-options-item"><a href="./catalogo.html">CATALOGO</a></li>
         <li class="wm-options-item"><a href="#contact-us">CONTACTANOS</a></li>
       </ul>
     </div>
@@ -114,9 +118,9 @@
     </section>
 
     <!--Menu que aparezca-->
-    <div class="product-info">
+    <div class="product-info" id="pi-window">
       <div class="p-info-btn">
-        <button>X</button>
+        <button >X</button>
       </div>
       <div class="top-div">
         <img src="./media/consola.png" alt="consola" />
@@ -147,7 +151,7 @@
       <div class="popular-product-container" id="">
         <div class="bg"></div>
         <div class="info-btn">
-          <button><i>i</i></button>
+          <button id="info-button"><i>i</i></button>
         </div>
 
         <div class="popular-product-img-container">
