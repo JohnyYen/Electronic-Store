@@ -84,24 +84,31 @@
         </div>
       </section>
 
-      <!--<div id="add-product-menu">
+      <div id="add-product-menu">
         <div id="add-photo">
-            <div id="exit-btn">
-                <button><b>X</b></button>
+            <div class="info-btn">
+                <button  id="exit-btn"><b>X</b></button>
             </div>
-            <input type="file" name="input-image" required accept="image/png, image/jpg">
+            <img src="" alt="Vista previa" id="preview-img">
+            <label for="input"  id="photo-input">Seleccione una foto</label>
+            <input type="file" name="input-image" required accept="image/png, image/jpg"style="display: none;" id="input">
         </div>
         <div id="add-texts">
-            <label for="Titulo">Titulo</label>
-            <input type="text" name="Titulo" id="">
-            <label for="Precio">Precio</label>
-            <input type="text" name="Precio" id="">
-            <label for="Categorias">Categorias</label>
-            <select name="Categorias" id="">
+            <label for="title">Titulo</label>
+            <input type="text" name="Titulo" id="title">
+            <br>
+            <label for="price">Precio</label>
+            <input type="number" name="Precio" id="price">
+            <br>
+            <label for="category">Categorias</label>
+            <select name="Categorias" id="category">
                 <option value="celulares">Celulares</option>
             </select>
         </div>
-      </div>-->
+        <div  class="info-btn">
+          <button id="add-new-product-btn">Agregar producto</button>
+        </div>
+      </div>
  
   
       <footer>

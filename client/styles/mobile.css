@@ -483,3 +483,86 @@ margin-bottom: 1rem;
 #edit-button{
     padding: 0.5rem 1rem;
 }
+
+#add-product-menu{
+    display: flex;
+    position: fixed;
+    z-index: 800;
+    flex-wrap: wrap;
+    top: 100px;
+    background-color: white;
+    width: 90%;
+    box-shadow: 2px 2px 8px var(--shadow-color);
+    border-radius: 20px;
+    margin-left: 5%;
+    height: max-content;
+}
+
+#exit-btn{
+    font-size: 15px;
+    padding: 3px 6px;
+    margin-bottom: 1rem;
+}
+
+#add-photo{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+}
+
+#photo-input{
+    background: var(--banner-bg);
+    border-radius: 20px;
+    padding: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin-left: 50%;
+    text-wrap: nowrap;
+    width: fit-content;
+    margin-bottom: 1rem;
+}
+
+#photo-input:hover{
+    transform: scale(1.1);
+}
+
+#add-texts{
+    margin-left: 2rem;
+}
+
+#add-texts label{
+    font-style: italic;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#add-texts input{
+    margin-bottom: 0.5rem;
+}
+
+#preview-img{
+    margin-left: 65%;
+    width: max-content;
+    height: 3rem;
+}
+
+#add-new-product-btn{
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 20px;
+    background: white;
+    border-style: outset;
+    border-color: var(--banner-bg);
+    transition: all 0.5s ease;
+    margin-left: 85%;
+    text-wrap: nowrap;
+    margin-bottom: 1rem;
+}
+
+#add-new-product-btn:hover{
+    border-color: var(--shadow-color);
+    background: var(--banner-bg);
+}
+
