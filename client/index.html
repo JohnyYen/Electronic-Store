@@ -19,8 +19,12 @@
       href="./styles/desktop.css"
       media="(min-width: 1024px)"
     />
+    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
   </head>
   <body>
+    <div class="black-bg"></div>
+
     <header class="navbar" id="main">
       <div class="logo">
         <box-icon name="meteor" color="#66726c"></box-icon>
@@ -39,7 +43,7 @@
     </header>
 
     <!--Menu que aparezca-->
-    <div id="window-menu" style="display: none">
+    <div id="window-menu">
       <h2 id="wm-title"><i>ELECTRONIC STORE</i></h2>
 
       <ul id="wm-options">
@@ -47,7 +51,7 @@
         <li class="wm-options-item">
           <a href="#popular-products">PRODUCTOS POPULARES</a>
         </li>
-        <li class="wm-options-item"><a href="#">CATALOGO</a></li>
+        <li class="wm-options-item"><a href="./catalogo.html">CATALOGO</a></li>
         <li class="wm-options-item"><a href="#contact-us">CONTACTANOS</a></li>
       </ul>
     </div>
@@ -59,7 +63,7 @@
     <section id="call-to-action">
       <div id="cta-img-container">
         <img
-          src="/client/media/human.png"
+          src="./media/human.png"
           alt="human-repairing stuff"
           id="human-repairing-img"
         />
@@ -78,7 +82,7 @@
       <!--Aqui agregar conexion con servidor para mostrar categorias-->
       <div class="product-category">
         <div class="category-img" id="">
-          <img src="/client/media/laptop.png" alt="laptop" />
+          <img src="./media/laptop.png" alt="laptop" />
         </div>
         <div class="category-title">
           <h3><i>LAPTOPS</i></h3>
@@ -87,7 +91,7 @@
 
       <div class="product-category">
         <div class="category-img" id="">
-          <img src="/client/media/consola.png" alt="consola" />
+          <img src="./media/consola.png" alt="consola" />
         </div>
         <div class="category-title">
           <h3><i>CONSOLAS</i></h3>
@@ -96,7 +100,7 @@
 
       <div class="product-category">
         <div class="category-img" id="">
-          <img src="/client/media/tablet.png" alt="tablet" />
+          <img src="./media/tablet.png" alt="tablet" />
         </div>
         <div class="category-title">
           <h3><i>TABLETS</i></h3>
@@ -105,7 +109,7 @@
 
       <div class="product-category">
         <div class="category-img" id="">
-          <img src="/client/media/TV LCD.png" alt="tv" />
+          <img src="./media/TV LCD.png" alt="tv" />
         </div>
         <div class="category-title">
           <h3><i>TELEVISORES</i></h3>
@@ -114,12 +118,12 @@
     </section>
 
     <!--Menu que aparezca-->
-    <div class="product-info">
+    <div class="product-info" id="pi-window">
       <div class="p-info-btn">
-        <button>X</button>
+        <button >X</button>
       </div>
       <div class="top-div">
-        <img src="/client/media/consola.png" alt="consola" />
+        <img src="./media/consola.png" alt="consola" />
       </div>
 
       <div class="bottom-div">
@@ -147,11 +151,11 @@
       <div class="popular-product-container" id="">
         <div class="bg"></div>
         <div class="info-btn">
-          <button><i>i</i></button>
+          <button id="info-button"><i>i</i></button>
         </div>
 
         <div class="popular-product-img-container">
-          <img src="/client/media/consola.png" alt="consola" />
+          <img src="./media/consola.png" alt="consola" />
         </div>
 
         <div class="popular-product-text-container">
@@ -166,7 +170,7 @@
         </div>
 
         <div class="popular-product-img-container">
-          <img src="/client/media/laptop.png" alt="consola" />
+          <img src="./media/laptop.png" alt="consola" />
         </div>
 
         <div class="popular-product-text-container">
@@ -233,8 +237,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/api/app.js"></script>
+    <script src="app.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

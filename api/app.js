@@ -1,5 +1,6 @@
 import Express from 'express'
 import path from 'path';
+import cors from 'cors';
 import {indexRouter} from './routes/index.routes.js';
 import {catalogRouter} from './routes/catalog.routes.js';
 import { config } from "dotenv";
@@ -16,6 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 //Middlewares
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: false }));
+app.use(cors())
 
 //Routes
 app.use(indexRouter)
