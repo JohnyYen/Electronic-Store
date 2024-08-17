@@ -12,12 +12,7 @@
     <link
       rel="stylesheet"
       href="./styles/tablet.css"
-      media="(min-width: 426px) and (max-width: 1023px)"
-    />
-    <link
-      rel="stylesheet"
-      href="./styles/desktop.css"
-      media="(min-width: 1024px)"
+      media="(min-width: 426px)"
     />
     <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
@@ -25,11 +20,21 @@
   <body>
     <div class="black-bg"></div>
 
-    <header class="navbar" id="main">
+    <header class="navbar">
       <div class="logo">
         <box-icon name="meteor" color="#66726c"></box-icon>
         <h3>Electronic Store</h3>
       </div>
+
+      <ul id="navbar-options">
+        <li class="navbar-item"><a href="#main"><box-icon name='home' type='solid' color='#66726c' ></box-icon></a></li>
+        <li class="navbar-item">
+          <a href="#popular-product-h2"><box-icon name='store' color='#66726c' ></box-icon></a>
+        </li>
+        <li class="navbar-item"><a href="./pages/catalogo.html" target="_blank" rel="noopener noreferrer"><box-icon name='food-menu' type='solid' color='#66726c' ></box-icon></a></li>
+        <li class="navbar-item"  id="contact"><a href="#contact-us"><box-icon name='phone' type='solid' color='#66726c' ></box-icon></a></li>
+      </ul>
+
       <div id="menu-icon-container">
         <button>
           <box-icon
@@ -49,15 +54,18 @@
       <ul id="wm-options">
         <li class="wm-options-item"><a href="#main">INICIO</a></li>
         <li class="wm-options-item">
-          <a href="#popular-products">PRODUCTOS POPULARES</a>
+          <a href="#popular-product-h2">PRODUCTOS POPULARES</a>
         </li>
-        <li class="wm-options-item"><a href="./catalogo.html">CATALOGO</a></li>
+        <li class="wm-options-item"><a href="./pages/catalogo.html">CATALOGO</a></li>
         <li class="wm-options-item"><a href="#contact-us">CONTACTANOS</a></li>
       </ul>
     </div>
 
     <section id="hero-section">
-      <h1><i>Manteniendo la tecnología al alcance de tu mano</i></h1>
+      <h1 id="main"><i>Manteniendo la tecnología al alcance de tu mano</i></h1>
+      <button type="button" id="cta-btn" class="hide-in-mobile">
+        <a href="https://wa.me/1234567890?text=Hola%20me%20gustaría%20saber%20más%20sobre%20sus%20productos" target="_blank" rel="noopener noreferrer">Llámanos</a>
+      </button>
     </section>
 
     <section id="call-to-action">
@@ -71,14 +79,16 @@
       <div id="cta-text-container">
         <h2 id="cta-title"><i>Reparamos tus equipos electrónicos</i></h2>
         <button type="button" id="cta-btn">
-          <a href="tel:+">Llámanos!</a>
+          <a href="https://wa.me/1234567890?text=Hola%20me%20gustaría%20saber%20más%20sobre%20sus%20productos" target="_blank" rel="noopener noreferrer">Llámanos</a>
         </button>
       </div>
     </section>
 
-    <section id="categories">
+    <div>
       <h2 id="categories-title"><i>¿Qué productos ofertamos?</i></h2>
-
+    </div>
+    
+    <section id="categories">
       <!--Aqui agregar conexion con servidor para mostrar categorias-->
       <div class="product-category">
         <div class="category-img" id="">
@@ -145,17 +155,35 @@
       </div>
     </div>
 
-    <section id="popular-products">
+    <div id="popular-product-h2">
       <h2><i>Productos Populares</i></h2>
+    </div>
+
+    <section id="popular-products">
       <!--Aplicar Logica aqui tambien-->
       <div class="popular-product-container" id="">
-        <div class="bg"></div>
+        <!--<div class="bg"></div>-->
         <div class="info-btn">
           <button id="info-button"><i>i</i></button>
         </div>
 
         <div class="popular-product-img-container">
           <img src="./media/consola.png" alt="consola" />
+        </div>
+
+        <div class="popular-product-text-container">
+          <h2 id="popular-product-title"><i>Consola XBOX</i></h2>
+          <h2 id="popular-product-price"><i>$50.00</i></h2>
+        </div>
+      </div>
+
+      <div class="popular-product-container" id="">
+        <div class="info-btn">
+          <button><i>i</i></button>
+        </div>
+
+        <div class="popular-product-img-container">
+          <img src="./media/laptop.png" alt="consola" />
         </div>
 
         <div class="popular-product-text-container">
@@ -237,9 +265,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="app.js"></script>
+    <script src="./js/index.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./app.js"></script>
+
   </body>
 </html>

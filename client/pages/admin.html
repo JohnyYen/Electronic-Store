@@ -12,12 +12,7 @@
     <link
       rel="stylesheet"
       href="./styles/tablet.css"
-      media="(min-width: 426px) and (max-width: 1023px)"
-    />
-    <link
-      rel="stylesheet"
-      href="./styles/desktop.css"
-      media="(min-width: 1024px)"
+      media="(min-width: 426px)"
     />
     <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
@@ -29,6 +24,17 @@
           <box-icon name="meteor" color="#66726c"></box-icon>
           <h3>Electronic Store</h3>
         </div>
+
+        <ul id="navbar-options">
+          <li class="navbar-item"><a href="#main"><box-icon name='home' type='solid' color='#66726c' ></box-icon></a></li>
+          <li class="navbar-item">
+            <a href="#popular-products"><box-icon name='store' color='#66726c' ></box-icon></a>
+          </li>
+          <li class="navbar-item"><a href="./pages/catalogo.html" target="_blank" rel="noopener noreferrer"><box-icon name='food-menu' type='solid' color='#66726c' ></box-icon></a></li>
+          <li class="navbar-item"  id="contact"><a href="#contact-us"><box-icon name='phone' type='solid' color='#66726c' ></box-icon></a></li>
+        </ul>
+
+        
         <div id="menu-icon-container">
           <button>
             <box-icon
@@ -116,7 +122,7 @@
       </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="app.js"></script>
+    <script src="../js/admin.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./app.js"></script>

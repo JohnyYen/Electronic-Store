@@ -19,6 +19,10 @@
     padding: 0;
 }
 
+.hide-in-mobile{
+    display: none;
+}
+
 .black-bg{
     background: var(--font-color);
     position: absolute;
@@ -26,6 +30,10 @@
     display: block;
     height: 100vh;
     width: auto;
+}
+
+#navbar-options{
+    display: none;
 }
 
 header{
@@ -47,18 +55,14 @@ header{
     display: flex;
     justify-content: left;
     text-wrap: nowrap;
-}
-
-#menu-icon-container{
-    display: flex;
-    justify-content: right;
-    margin-left: 7rem;
+    width: 100%;
 }
 
 #menu-icon-container button{
     border: none;
     background: none;
     transition: all 0.5s ease;
+    padding: 0 2rem;
 }
 
 #menu-icon-container button:hover{
@@ -114,8 +118,8 @@ header{
 #cta-btn{
     border: none;
     background-color: #fad642;
-    padding: 8px;
-    width: 10rem;
+    padding: 0rem 1rem;
+    width: fit-content;
     border-radius: 15px;
     box-shadow: 2px 2px 2px var(--shadow-color);
     font-family: 'Segoe UI';
@@ -123,21 +127,32 @@ header{
     font-style: italic;
     font-size: large;
     margin-bottom: 2rem;
+    transition: all 0.5s ease;
+}
+
+#cta-btn:hover{
+    transform: scale(1.2);
+    background: none;
+    border: solid 4px var(--banner-bg);
 }
 
 #cta-btn a{
     color: white;
     text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+#cta-btn a:hover{
+    color: var(--banner-bg);
 }
 
 #categories{
-    margin-top: 4rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-#categories h2{
+#categories-title{
     text-align: center;
     padding: 0rem 1rem;
 }
@@ -185,11 +200,7 @@ header{
     margin-top: 10px;
 }
 
-#popular-products{
-    margin-top: 6rem;
-}
-
-#popular-products h2{
+#popular-product-h2{
     text-align: center;
     padding-bottom: 1rem;
 }
