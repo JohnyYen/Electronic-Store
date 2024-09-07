@@ -6,15 +6,15 @@
     <title>Admin Page Electronic Store</title>
     <link
       rel="stylesheet"
-      href="./styles/mobile.css"
+      href="../styles/mobile.css"
       media="(max-width: 425px)"
     />
     <link
       rel="stylesheet"
-      href="./styles/tablet.css"
+      href="../styles/tablet.css"
       media="(min-width: 426px)"
     />
-    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../media/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
 
   </head>
@@ -34,7 +34,6 @@
           <li class="navbar-item"  id="contact"><a href="#contact-us"><box-icon name='phone' type='solid' color='#66726c' ></box-icon></a></li>
         </ul>
 
-        
         <div id="menu-icon-container">
           <button>
             <box-icon
@@ -47,7 +46,7 @@
         </div>
       </header>
 
-          <!--Menu que aparezca-->
+          <!--Menu de opciones version movil-->
           <!--Agregar conexion con el servidor para las categorias-->
     <div id="window-menu">
         <h2 id="wm-title"><i>ELECTRONIC STORE</i></h2>
@@ -61,10 +60,20 @@
         </ul>
       </div>
 
-      <section id="all-products-list">
+      <!--Barra de busqueda-->
+      <div id="search-input">
+        <!--Insertar la ruta de buscar-->
+        <form action="" method="post">
+          <input type="text" name="search" id="search">
+          <button type="submit" id="search-btn">Buscar</button>
+        </form>
+      </div>
+
+      <section id="all-products-list" style="margin-bottom: 4rem;">
         <div id="title-products">
+          <!--Agregar conexion con el servidor-->
             <h1><i>Todos los productos</i></h1>
-            <button class="add-product"><b>+</b></button>
+            <button class="add-product" onclick="document.getElementById('add-product-menu').style.display = 'flex';"><b>+</b></button>
         </div>
         <div class="product-list">
           <ul>
@@ -72,12 +81,33 @@
               <div class="popular-product-container" id="">
                 <div class="bg"></div>
                 <div class="info-btn">
-                  <button id="info-button"><i>i</i></button>
                   <button id="edit-button"><box-icon name='pencil' type='solid' color='#66726c' ></box-icon></button>
+                  <!--Agregar boxicon de borrar-->
+                  <button id="delete-button" onclick="document.getElementById('delete-modal').style.display = 'flex';"><box-icon name='trash-alt' type='solid' color='#66726c' ></box-icon></button>
                 </div>
         
                 <div class="popular-product-img-container">
-                  <img src="./media/consola.png" alt="consola" />
+                  <img src="../media/consola.png" alt="consola" />
+                </div>
+        
+                <div class="popular-product-text-container">
+                  <h2 id="popular-product-title"><i>Consola XBOX</i></h2>
+                  <h2 id="popular-product-price"><i>$50.00</i></h2>
+                </div>
+              </div>
+            </li>
+
+            <li id="product-" class="product-item">
+              <div class="popular-product-container" id="">
+                <div class="bg"></div>
+                <div class="info-btn">
+                  <button id="edit-button"><box-icon name='pencil' type='solid' color='#66726c' ></box-icon></button>
+                  <!--Agregar boxicon de borrar-->
+                  <button id="delete-button" onclick="document.getElementById('delete-modal').style.display = 'flex';"><box-icon name='trash-alt' type='solid' color='#66726c' ></box-icon></button>
+                </div>
+        
+                <div class="popular-product-img-container">
+                  <img src="../media/consola.png" alt="consola" />
                 </div>
         
                 <div class="popular-product-text-container">
@@ -90,32 +120,56 @@
         </div>
       </section>
 
+      <!--Modal de eliminar-->
+      <div id="delete-modal">
+        <form action="" method="post" id="delete-modal-form">
+          <p>¿Está seguro de que desea eliminar el producto?</p>
+          <button type="button" class="add-btn">Aceptar</button>
+          <button type="button" class="add-btn" id="cancel-deletion">Cancelar</button>
+        </form>
+      </div>
+
+      <!--Modal de creacion de nuevo producto-->
       <div id="add-product-menu">
-        <div id="add-photo">
-            <div class="info-btn">
-                <button  id="exit-btn"><b>X</b></button>
-            </div>
-            <img src="" alt="Vista previa" id="preview-img">
+        <form action="http://localhost:3000/admin/panel" method="post" id="add-product-form">
+
+          <div id="left-div">
+            <img src="#" alt="Vista previa" id="preview-img">
             <label for="input"  id="photo-input">Seleccione una foto</label>
-            <input type="file" name="input-image" required accept="image/png, image/jpg"style="display: none;" id="input">
-        </div>
-        <div id="add-texts">
+            <input type="file" name="input-image" required accept="image/png, image/jpg"style="display: none;" id="input" aria-required="true">  
+          </div>
+
+          <div id="rigth-div">
             <label for="title">Titulo</label>
-            <input type="text" name="Titulo" id="title">
+            <input type="text" name="Titulo" id="title" aria-required="true">
             <br>
             <label for="price">Precio</label>
-            <input type="number" name="Precio" id="price">
+            <input type="number" name="Precio" id="price" required aria-required="true">
             <br>
             <label for="category">Categorias</label>
             <select name="Categorias" id="category">
-                <option value="celulares">Celulares</option>
             </select>
-        </div>
-        <div  class="info-btn">
-          <button id="add-new-product-btn">Agregar producto</button>
-        </div>
+          </div>
+
+          <div id="button-panel">
+            <button class="add-btn" type="submit">Agregar producto</button>
+            <button type="button" id="cancel-btn" onclick="addPRoductWindow.style.display = 'none';">Cancelar</button>
+          </div>
+        </form>
       </div>
  
+            <!--Modal de creacion de nueva categoria-->
+      <div id="create-category">
+        <form action="http://localhost:3000/admin/types" method="post">
+          <label for="category-name">Nombre de la categoría</label>
+          <input onchange="" type="text" id="category-name" name="category-name">
+
+          <div id="button-panel">
+            <button class="add-btn" type="button" id="add-new-category">Agregar categoría</button>
+            <button type="button" id="cancel-btn" onclick="document.getElementById('create-category').style.display = 'none';">Cancelar</button>
+          </div>
+        </form>
+      </div>
   
       <footer>
         <p><i>JP Devs© 2024 Todos los derechos reservados.</i></p>

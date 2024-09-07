@@ -10,3 +10,17 @@ mobileOptionBtn.onclick = function(){
     
 }
 
+let infoBtn = document.querySelectorAll(".info-btn");
+let productInfoWindow = document.querySelector(".product-cards");
+let exitBtn = document.querySelector(".exit-button-container button");
+
+
+infoBtn.forEach(function(boton) {
+    boton.addEventListener("click", function(){
+            productInfoWindow.style.display = "flex";
+    });
+});
+
+exitBtn.addEventListener("click", ()=>{
+    productInfoWindow.style.display = "none";
+});

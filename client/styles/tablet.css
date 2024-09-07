@@ -12,6 +12,10 @@
     --subtitle-size: 18px;
 }
 
+a{
+    text-decoration: none;
+}
+
 *{
     font-family: 'Segoe UI';
     color: #66726c;
@@ -192,6 +196,13 @@ header{
     border-radius: 25px;
     margin: 1rem 1rem;
     justify-content: space-around;
+    width: fit-content;
+}
+
+.product-list ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
 }
 
 .info-btn button{
@@ -203,6 +214,11 @@ header{
     padding: 0.5rem 1.5rem;
     margin-left: 10px;
     margin-top: 10px;
+    transition: all 0.5s ease;
+}
+
+.info-btn button:hover{
+    transform: scale(1.2);
 }
 
 #popular-products{
@@ -265,6 +281,10 @@ footer{
     justify-content: center;
     align-items: center;
     height: 2rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: white;
 }
 
 .invisible{
@@ -312,96 +332,6 @@ footer{
 .wm-options-item a{
     text-decoration: none;
     font-weight: bolder;
-}
-
-.product-info{
-    position: fixed;
-    z-index: 800;
-    top: 100px;
-    background-color: white;
-    width: 90%;
-    box-shadow: 2px 2px 8px var(--shadow-color);
-    border-radius: 20px;
-    margin-left: 5%;
-    display: none;
-    height: 55vh;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.top-div img{
-    height: 20vh;
-    width: auto;
-}
-
-.top-div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.bottom-div{
-    display: flex;
-    flex-direction: column;
-    background: var(--banner-bg);
-    align-items: center;
-    justify-content: center;
-    border-radius: 0px 0px 20px 20px;
-}
-
-.p-info-btn button{
-    border: none;
-    background: var(--banner-bg);
-    font-size: var(--subtitle-size);
-    border-radius: 50%;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-left: 5px;
-    padding: 0.2rem 0.4rem;
-    transition: all 0.5s ease;
-}
-
-.info-btn button{
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-
-.info-btn button:hover{
-    transform: scale(1.2);
-}
-
-.p-info-btn{
-    padding-bottom: 1.2rem;
-}
-
-#pi-title{
-    font-size: var(--subtitle-size);
-}
-
-#pi-subtitle{
-    font-size: var(--subtitle-size);
-}
-
-.information p{
-    color: white;
-    font-style: italic;
-    padding: 0rem 1rem;
-}
-
-.pi-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-}
-
-#pi-reserv-btn{
-    border: solid white;
-    background: none;
-    color: white;
-    box-shadow: 2px 2px 2px var(--shadow-color);
-    border-radius: 20px;
-    width: 6rem;
 }
 
 
@@ -520,7 +450,7 @@ margin-bottom: 1rem;
     width: 90%;
     box-shadow: 2px 2px 8px var(--shadow-color);
     border-radius: 20px;
-    margin-left: 5%;
+    /* margin-left: 5%; */
     height: max-content;
 }
 
@@ -592,3 +522,390 @@ margin-bottom: 1rem;
     background: var(--banner-bg);
 }
 
+.product-cards {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 80000;
+    top: 100px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px var(--shadow-color);
+    transform: translateX(3rem);
+    width: 90%;
+}
+
+.exit-button-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: fit-content;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.exit-button-container button {
+    background: var(--banner-bg);
+    border: none;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.exit-button-container button:hover {
+    transform: scale(1.5);
+}
+
+.image-container {
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin-left: 20%;
+}
+
+.image-container img {
+    width: 40%;
+    height: auto;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: max-content;
+    background: var(--banner-bg);
+}
+
+.text-container h2 {
+    font-size: var(--subtitle-size);
+}
+
+.text-container h3 {
+    font-size: var(--subtitle-size);
+    color: white;
+    text-shadow: 2px 2px 2px var(--shadow-color);
+}
+
+.text-container p {
+    padding: 3px 5px;
+    font-size: var(--p-size);
+    text-align: center;
+}
+
+.order-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--banner-bg);
+    width: 100%;
+    border-radius: 0px 0px 20px 20px;
+    padding: 0.3rem 0;
+}
+
+.order-btn-container button {
+    border: solid 5px white;
+    border-radius: 20px;
+    background: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.order-btn-container button:hover {
+    transform: scale(1.2);
+    box-shadow: 2px 2px 16px 4px white;
+    border-color: var(--banner-bg);
+    background: white;
+    color: var(--banner-bg);
+}
+
+#products-by-category{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#products-container{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.product{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: solid var(--banner-bg);
+    margin: 1rem;
+    border-radius: 20px;
+    width: 30%;
+}
+
+.product-image-container img{
+    width: 50%;
+    padding-top: 1rem;
+}
+
+.product-text-container{
+    width: 100%;
+}
+
+.product-text-container h2{
+    padding-bottom: 0.5rem;
+}
+
+.product-order-btn button{
+    border: solid var(--banner-bg) 3px;
+    border-radius: 10px;
+    background: white;
+    padding: 0.1rem  0.5rem;
+    transition: all 0.5s ease;
+    box-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+.product-order-btn button:hover{
+    transform: scale(1.2);
+    background: var(--banner-bg);
+    font-weight: bold;
+}
+
+.product-order-btn{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    box-shadow: 2px 2px 4px var(--shadow-color);
+    margin: 3rem 3rem 3rem;
+    padding: 2rem;
+    border-radius: 10px;
+    background: rgb(255, 255, 255, 0.9);
+    transition: all 0.5s ease;
+    max-width: 60%;
+    margin-left: 20%;
+}
+
+#login-form input{
+    margin-bottom: 1rem;
+}
+
+#login-form h2{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#login-form button{
+    border: solid 2px var(--banner-bg);
+    border-radius: 5px;
+    padding: 0.2rem;
+    background: white;
+    color: var(--banner-bg);
+    font-weight: bold;
+    transition: all 0.5s ease;
+    box-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+#login-form button:hover{
+    transform: scale(1.2);
+    background: var(--banner-bg);
+    color: white;
+}
+
+#login-body{
+    background: url(../media/new-hero.jpg) no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+/*ADD PRODUCT*/
+#add-product-menu{
+    position: fixed;
+    z-index: 999999999;
+    top: 70px;
+    background: white;
+    box-shadow: 2px 2px 4px var(--shadow-color);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: fit-content;
+    display: none;
+    left: 0;
+    width: fit-content;
+    width: 60%;
+    margin-left: 20%;
+    padding: 10px;
+}
+
+#add-product-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#left-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+#preview-img, #photo-input{
+    margin: 0;
+    margin-bottom: .5rem;
+}
+
+#preview-img{
+    border: dashed var(--banner-bg);
+    width: 40%;
+}
+
+#rigth-div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+#cancel-btn, .add-btn{
+    font-size: 12px;
+    padding: 0.2rem;
+    border-radius: 20px;
+    background: white;
+    border-style: outset;
+    border-color: var(--banner-bg);
+    transition: all 0.5s ease;
+    height: fit-content;
+}
+
+#cancel-btn:hover{
+    background: var(--shadow-color);
+    color: white;
+}
+
+#button-panel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#button-panel button{
+    margin: 0rem 0rem .7rem .7rem;
+}
+
+.add-btn:hover{
+    background: var(--banner-bg);
+    color: white;
+    border-color: var(--background);
+}
+
+#login-body{
+    background: url(../media/new-hero.jpg) no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/*Modal de creacion de categoria*/
+#create-category{
+    display: none;
+    position: fixed;
+    z-index: 99999999999999999;
+    background: white;
+    box-shadow: 2px 2px 4px var(--shadow-color);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 80%;
+    margin-left: 10%;
+    top: 100px;
+}
+
+#create-category form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+#category-name{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+#delete-button{
+    padding: .5rem 1rem;
+}
+
+/*Barra de busqueda*/
+#search-input{
+    display: flex;
+    margin-top: 80px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#search-btn{
+    border: outset;
+    border-radius: 5px;
+    background: var(--banner-bg);
+    padding: 0.2rem;
+    transition: all 0.5s ease;
+}
+
+#search-btn:hover{
+    transform: scale(1.1);
+}
+
+/*Modal de eliminar*/
+#delete-modal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    z-index: 9999999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px var(--shadow-color);
+    text-wrap: wrap;
+    width: 70%;
+    margin-left: 15%;
+    padding: .5rem;
+}
+
+#delete-modal-form button{
+    margin-top: 1rem;
+    position: relative;
+    left: 35%;
+}

@@ -53,7 +53,6 @@ sliderContainer.addEventListener('touchend', function() {
 
 const loadCategories = () => {
     const catList = document.getElementById("wm-options");
-    console.log(axios);
     axios.get('http://localhost:3000/types')
     .then(res => {
         res.data.forEach((element, i) => {
@@ -87,39 +86,38 @@ function loadProducts(){
 
             products.appendChild(container);
         })
-        .catch(error => {
-            console.error('No se pudo obtener las categorias', error);
-        });
+    })
+    .catch(error => {
+        console.error('No se pudo obtener las categorias', error);
+    });
+}
+
+
+let productContainer = document.getElementById("products-container");
+
+function loadProductsByCategories(){
+    axios.get('http://localhost:3000/types')    
+    .then(res => {
+        res.data.forEach(element => {
+            let div = document.createElement('div');
+            div.classList = 'card';
+            let catTitle = document.createElement('h3');
+            catTitle.innerText = `${element.name_type}`;
+            catTitle.id = `category-${element.name_type}`;
+
+            div.appendChild(catTitle);
+            productContainer.appendChild(div);
+
+        })
+    })  
+    .catch(error => {
+        console.error('No se pudo mi rey :(', error);
     })
 }
 
 
-//ESPERAR RESPUESTA DE JHONNY
-/*function loadProductsByCategories(){
-    axios.get('http://localhost:3000/types')
-
-    .then(res => {
-        let section = document.getElementById('products-by-category');
-
-        res.data.forEach(element => {
-            let categoryTitle = document.createElement('h2');
-        
-            let productContainer = document.createElement('div');
-            div.classList = 'popular-product-container';
-            
-            let infoBtnContainer = document.createElement('div');
-            infoBtnContainer.classList = 'info-btn';
-        
-            let infoButton = document.createElement('button');
-            infoButton.innerHTML = '<i>i</i>';
-
-            let imageContainer = document.createElement('div');
-        
-            section.appendChild(productContainer);
-        })
-    })  
-}*/
-
 loadCategories()
 loadProducts();
-//loadProductsByCategories();
+loadProductsByCategories();
+
+//Slider de categorias

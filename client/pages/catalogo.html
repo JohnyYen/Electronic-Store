@@ -19,16 +19,16 @@
 
   </head>
   <body>
-    <header class="navbar" id="main">
+    <header class="navbar">
         <div class="logo">
           <box-icon name="meteor" color="#66726c"></box-icon>
-          <h3>Electronic Store</h3>
+          <h3><a href="../index.html">Electronic Store</a></h3>
         </div>
 
         <ul id="navbar-options">
           <li class="navbar-item"><a href="#main"><box-icon name='home' type='solid' color='#66726c' ></box-icon></a></li>
           <li class="navbar-item">
-            <a href="#popular-products"><box-icon name='store' color='#66726c' ></box-icon></a>
+            <a href="#cat-here"><box-icon name='store' color='#66726c' ></box-icon></a>
           </li>
           <li class="navbar-item"><a href="./pages/catalogo.html" target="_blank" rel="noopener noreferrer"><box-icon name='food-menu' type='solid' color='#66726c' ></box-icon></a></li>
           <li class="navbar-item"  id="contact"><a href="#contact-us"><box-icon name='phone' type='solid' color='#66726c' ></box-icon></a></li>
@@ -60,7 +60,7 @@
       </div>
 
       <section id="all-products-slider">
-        <h2><i>Todos los productos</i></h2>
+        <h2  id="main"><i>Todos los productos</i></h2>
         <div class="slider">
             <div class="slider-container" id="product-container">
                 <div class="slide">
@@ -82,8 +82,48 @@
       </section>
 
       <section id="products-by-category">
-        <h2><i>Categorias</i></h2>
+        <h2 id="cat-here"><i>Por Categoría</i></h2>
 
+        <div id="products-container">
+          <div class="product">
+            <div class="product-image-container">
+              <img src="../media/Asus MotherBoard.png" alt="">
+            </div>
+
+            <div class="product-text-container">
+              <h2>Consola</h2>
+              <h2>$50 USD</h2>
+            </div>
+
+            <div class="product-order-btn"><button><a href= "https://wa.me/1234567890?text=Hola%20me%20gustaría%20reservar%20un%20producto" target="_blank">Reservar</a></button></div>
+          </div>
+
+          <div class="product">
+            <div class="product-image-container">
+              <img src="../media/Camara video.png" alt="">
+            </div>
+
+            <div class="product-text-container">
+              <h2>Consola</h2>
+              <h2>$50 USD</h2>
+            </div>
+
+            <div class="product-order-btn"><button><a href= "https://wa.me/1234567890?text=Hola%20me%20gustaría%20reservar%20un%20producto" target="_blank">Reservar</a></button></div>
+          </div>
+
+          <div class="product">
+            <div class="product-image-container">
+              <img src="../media/DVD.png" alt="">
+            </div>
+
+            <div class="product-text-container">
+              <h2>Consola</h2>
+              <h2>$50 USD</h2>
+            </div>
+
+            <div class="product-order-btn"><button><a href= "https://wa.me/1234567890?text=Hola%20me%20gustaría%20reservar%20un%20producto" target="_blank">Reservar</a></button></div>
+          </div>
+        </div>
       </section>
       
       <section id="contact-us">
